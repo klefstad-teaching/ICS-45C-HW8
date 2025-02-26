@@ -400,7 +400,7 @@ As with previous submissions, submit via `GitHub` by the following steps:
 2. `git commit -a -m "Commit Message Here"`
 3. `git push --set-upstream origin main`
 
-to push your changes to your private GitHub repository, and then submit `hw7` to `Gradescope`.
+to push your changes to your private GitHub repository, and then submit `hw8` to `Gradescope`.
 
 > ⚠️ Be sure your #includes and using match exactly what is specified, for the autograder to run your submission with our own test programs.
 
