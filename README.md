@@ -87,9 +87,15 @@ Write a C++ program, named `process_numbers`, in the files `process_numbers.hpp`
 - writes the odd ones to a file named `odds.txt`, following the format in the sample output below with a newline after the list of numbers, and
 - writes the even ones to a file named `evens.txt`, following the format in the sample output below. (Yes, the evens and odds have different output formats.)
 
-Do not use any low-level `for`, `while`, or `do-while` loops.
+Do not use any low-level `for`, `while`, or `do-while` loops!
 
-Consider these because they will be useful: `vector`, `istream_iterator<>()`, `sort` or `ranges::sort()`, `copy_if` or `ranges::copy_if()`, `ostream_iterator<>()`, and `lambda`
+Consider these because they will be useful: 
+- `vector`
+- `istream_iterator<>()`
+- `sort` or `ranges::sort()`
+- `copy_if` or `ranges::copy_if()`
+- `ostream_iterator<>()`
+- `lambda`
 
 > **Read about the `ranges` library [here](https://en.cppreference.com/w/cpp/ranges).**
 
@@ -140,7 +146,7 @@ Write a C++ program, named `mapset`, in the files `mapset.hpp`, `mapset.cpp`, an
   - ignores upper- and lowercase letters, converting all to lowercase using `std::transform()` or [`ranges`](https://en.cppreference.com/w/cpp/ranges), `tolower`
 - writes output to a file named `frequency.txt` 
   - with the words in ascending alphabetical order with their associated frequency count, one word per line.
-  - C++ allows a very nice loop option for maps with a *destructuring for-loop* to assign `first` and `second` members of the `std::pair` into two named variables, e.g.,
+  - C++ provides the following very nice loop option useful for maps&mdash;a ***destructuring*** `for` ***loop*** to assign `first` and `second` members of the `std::pair` into two named variables, e.g.,
 
 ```cpp
 for (const auto& [word, count] : my_map) {
@@ -283,7 +289,7 @@ Calculating course grade: Course grades are assigned according to the following 
 
 Print the output to a file named `course_grades.txt`, with a summary of each component average in the following format, with students’ names sorted in ascending alphabetical order, with the primary sort key the last name, and the secondary key the first name.
 
-Note: Use left alignment in a field width of size 8 for the labels: `Name:`, `HW Ave:`, etc. These are done using the `iomanip` `setw()` and `left`.
+Note: Use left alignment in a field width of size 8 for the labels: `Name:`, `HW Ave:`, etc. These formatting manipulations are done using the `iomanip` `setw()` and `left`.
 
 ```
 Name:   Lisa Simpson
@@ -323,20 +329,6 @@ Submit any one of the three programs to the autograder for partial credit toward
 6. Write and/or call the functions to print the data from your data structures to the output files.
 7. Compare your output to the expected output.
 8. Once your program is functioning correctly, use the sanitizers and/or `valgrind` to help detect memory errors.  We will benefit from the Rule of Zero this week, so memory errors should be less common or maybe non-existent if we are lucky!
-
-## How to Submit and Grade the programs
-
-In **GradeScope** for **Homework 8**, upload from GitHub hw8 to submit any or all of the program files detailed above:
-
-- `process_numbers.hpp`
-- `process_numbers.cpp`
-- `process_numbers_main.cpp`
-- `mapset.hpp`
-- `mapset.cpp`
-- `mapset_main.cpp`
-- `compute_grades.hpp`
-- `compute_grades.cpp`
-- `compute_grades_main.cpp`
 
 ## Build Instructions
 
@@ -380,18 +372,6 @@ To run the above targets after compiling them:
 Once you have run the code above and it either produces the output you expected or passes
 all provided tests, congratulations! You are now ready to [submit](#submission) your homework!
 
-## Grading criteria
-
-Points are allotted for
-
-- Passing tests of functional correctness.
-- **Using the STL as specified in the instructions, rather than `for` or `while` loops.**
-- Preventing memory leaks. Major points are deducted for mismatched new and delete and other memory errors detected by valgrind.
-- Programs that do not compile with the autograder testing programs receive no points.
-- Crashes due to a segfault means the program is not at all useful and, therefore, receives no points.
-
-*We may adjust grades manually when warranted. For example, a submission that attempts to defraud the autograder points by not implementing the requirements may be given a 0.*
-
 ## Submission
 
 As with previous submissions, submit via `GitHub` by the following steps:
@@ -403,6 +383,18 @@ As with previous submissions, submit via `GitHub` by the following steps:
 to push your changes to your private GitHub repository, and then submit `hw8` to `Gradescope`.
 
 > ⚠️ Be sure your #includes and using match exactly what is specified, for the autograder to run your submission with our own test programs.
+
+## Grading criteria
+
+Points are allotted for
+
+- Passing tests of functional correctness.
+- **Using the STL as specified in the instructions, rather than `for` or `while` loops.**
+- Preventing memory leaks. Major points are deducted for mismatched new and delete and other memory errors detected by valgrind.
+- Programs that do not compile with the autograder testing programs receive no points.
+- Crashes due to a segfault means the program is not at all useful and, therefore, receives no points.
+
+*We may adjust grades manually when warranted. For example, a submission that attempts to defraud the autograder points by not implementing the requirements may be given a 0.*
 
 ## Credit
 
